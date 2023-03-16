@@ -7,18 +7,20 @@ public class Pizza {
 
     public Pizza(String title, int weight) {
         this.title = title;
-        if (weight <= 0) {
+        if (weight <= 0 || weight>maxWeight) {
             throw new IncorrectWeightException(weight);
         }
         this.weight = weight;
     }
 
     public static void setMaxWeight(int n) {
+
         maxWeight = n;
     }
 
     @Override
     public String toString() {
+
         return "Пицца '" + title + "' весом " + weight + " г";
     }
 
